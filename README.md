@@ -1,5 +1,4 @@
 # DTMF Signal Generator
-Short Demo:
 
 The project is designed to generate Dual-Tone Multi-Frequency (DTMF) signals, simulating the sounds produced by pressing keys on a phone keypad. Each key corresponds to a specific frequency combination, creating unique tones.
 
