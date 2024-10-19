@@ -1,13 +1,13 @@
 # DTMF Signal Generator
 
-The project is designed to generate Dual-Tone Multi-Frequency (DTMF) signals, simulating the sounds produced by pressing keys on a phone keypad. Each key corresponds to a specific frequency combination, creating unique tones.
+The project is designed to generate Dual-Tone Multi-Frequency (DTMF) signals, this is simulating the sounds produced by pressing keys on a phone keypad. Each key has a corresponding frequency combination, thus creating unique tones.
 
 # What is used?:
 
-Flask: Used for serving the web-based interface that allows users to interact with the application.
-JavaScript: Manages button inputs and facilitates communication between the client and server.
-Sounddevice: Generates the DTMF tones in real-time based on the selected keys, providing immediate audio feedback.
-UI: Built with Python Flask, the interface employs JavaScript to create an interactive experience, allowing users to select phone keypad keys.
+Flask: I used this for serving the web-based interface that allowing the users to interact with the application.
+JavaScript: My other framework for managing button inputs and facilitates communication (helps me with the web interface).
+Sounddevice: Generates the DTMF tones in real-time based on the selected keys.
+UI: Built with Python Flask, the interface employs JavaScript for interactive experience.
 Sound Generation: Utilizes the sounddevice library for real-time audio synthesis based on DTMF frequencies associated with each keypress.
 Graph: Visualizes generated signals using Plotly and Plotly Express, featuring both time-domain and frequency-domain graphs for detailed analysis.
 Keypad Sound: Each keypress generates the corresponding DTMF tone, replicating an authentic phone keypad experience.
