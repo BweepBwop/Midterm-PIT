@@ -1,25 +1,38 @@
 # DTMF Signal Generator
 
-The project is designed to generate Dual-Tone Multi-Frequency (DTMF) signals, this is simulating the sounds produced by pressing keys on a phone keypad. Each key has a corresponding frequency combination, thus creating unique tones.
+This project is designed to generate Dual-Tone Multi-Frequency (DTMF) signals, simulating the sounds produced by pressing keys on a phone keypad. Each key corresponds to a unique frequency combination, producing distinct tones.
 
-# What is used?:
+## Features
 
-Flask: I used this for serving the web-based interface that allowing the users to interact with the application.
-JavaScript: My other framework for managing button inputs and facilitates communication (helps me with the web interface).
-Sounddevice: Generates the DTMF tones in real-time based on the selected keys.
-UI: Built with Python Flask, the interface employs JavaScript for interactive experience.
-Sound Generation: Utilizes the sounddevice library for real-time audio synthesis based on DTMF frequencies associated with each keypress.
-Graph: Visualizes generated signals using Plotly and Plotly Express, featuring both time-domain and frequency-domain graphs for detailed analysis.
-Keypad Sound: Each keypress generates the corresponding DTMF tone, replicating an authentic phone keypad experience.
+- **DTMF Signal Generation**: Real-time audio synthesis using DTMF frequencies for each keypress.
+- **Interactive Web Interface**: Built using Python Flask with JavaScript for handling button inputs.
+- **Graph Visualization**: Displays both time-domain and frequency-domain analysis of the generated signals using Plotly.
+- **Real-Time Sound**: Replicates the authentic phone keypad experience by generating corresponding DTMF tones for each key.
 
-# Necessary Imports and Their Purposes:
-Flask, render_template, jsonify, request: For creating the web application and handling HTTP requests
-numpy: For numerical operations, including array and mathematical computations
-scipy.fft and fftfreq: For performing Fast Fourier Transform (FFT) to analyze the frequency components of signals
-plotly.express: For creating interactive and dynamic visualizations of the data
-plotly.io: For handling the input/output of Plotly figures
-sounddevice: For real-time audio playback of generated DTMF tones
+## Technologies Used
 
-# Libraries:
-Plotly: Employed to create dynamic and adjustable graphs for visualizing signal characteristics in both time and frequency domains.
-Plotly Express: Used for simplifying the creation of complex visualizations, allowing for easy plotting of the DTMF signals.
+- **Flask**: Serves the web interface, allowing users to interact with the application.
+- **JavaScript**: Manages the button inputs and communicates with the backend for an interactive experience.
+- **Sounddevice**: Generates DTMF tones in real-time based on key selections.
+- **Plotly & Plotly Express**: Used to visualize the generated signals, featuring both time-domain and frequency-domain analysis.
+
+## How It Works
+
+1. **Web-Based Interface**: The interface allows users to select keys from a virtual keypad, which corresponds to phone keypad tones.
+2. **Real-Time Sound Generation**: Upon keypress, the corresponding DTMF tone is generated using the `sounddevice` library.
+3. **Signal Visualization**: Plotly is employed to create dynamic graphs to analyze the signal in both the time and frequency domains.
+
+## Necessary Imports and Their Purposes
+
+- `Flask`, `render_template`, `jsonify`, `request`: For creating the web application and handling HTTP requests.
+- `numpy`: For numerical operations such as array manipulation and mathematical computations.
+- `scipy.fft`, `fftfreq`: Used to perform Fast Fourier Transform (FFT) for analyzing frequency components of the signals.
+- `plotly.express`, `plotly.io`: For creating interactive visualizations and managing the input/output of Plotly figures.
+- `sounddevice`: For real-time audio playback of the generated DTMF tones.
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/dtmf-signal-generator.git
+   cd dtmf-signal-generator
