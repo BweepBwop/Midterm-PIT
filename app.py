@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 from flask import Flask, render_template, jsonify, request
 import numpy as np
 from scipy.fft import fft, fftfreq
@@ -190,4 +190,3 @@ def analyze_key():
 
 if __name__ == '__main__':
     app.run(debug=True)
->>>>>>> 69829870b059ea9357ff9b64123e6f6242066f37
