@@ -199,40 +199,40 @@
         }
 
         function generateAndAnalyze() {
-                if (!selectedKey) {
-                    alert("Please select a key.");
-                    return;
-                }
+            if (!selectedKey) {
+                alert("Please select a key.");
+                return;
+            }
 
-                const frequencies = dtmfFrequencies[selectedKey];
-                document.getElementById('explanation').textContent =
-                    `The identified key "${selectedKey}" has the following frequencies: 
+            const frequencies = dtmfFrequencies[selectedKey];
+            document.getElementById('explanation').textContent =
+                `The identified key "${selectedKey}" has the following frequencies: 
         Low Frequency: ${frequencies[0]} Hz, High Frequency: ${frequencies[1]} Hz.`;
 
-                $.ajax({
-                    url: '/analyze_key',
-                    type: 'POST',
-                    contentType: 'application/json',
-                    data: JSON.stringify({ key: selectedKey }),
-                    success: function (response) {
-                        const timeDomainData = JSON.parse(response.time_domain_plot);
-                        const freqDomainData = JSON.parse(response.freq_domain_plot);
-                        const combinedData = JSON.parse(response.combined_plot);
+            $.ajax({
+                url: '/analyze_key',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({ key: selectedKey }),
+                success: function (response) {
+                    const timeDomainData = JSON.parse(response.time_domain_plot);
+                    const freqDomainData = JSON.parse(response.freq_domain_plot);
+                    const combinedData = JSON.parse(response.combined_plot);
 
-                        combinedData.data[0].name = `Low Frequency (${frequencies[0]} Hz)`;
-                        combinedData.data[1].name = `High Frequency (${frequencies[1]} Hz)`;
-                        combinedData.data[2].name = `Combined Frequency (${frequencies[2]} Hz)`;
+                    combinedData.data[0].name = `Low Frequency (${frequencies[0]} Hz)`;
+                    combinedData.data[1].name = `High Frequency (${frequencies[1]} Hz)`;
+                    combinedData.data[2].name = `Combined Frequency (${frequencies[2]} Hz)`;
 
-                        Plotly.newPlot('time-domain-plot', timeDomainData.data, timeDomainData.layout);
-                        Plotly.newPlot('freq-domain-plot', freqDomainData.data, freqDomainData.layout);
-                        Plotly.newPlot('combined-plot', combinedData.data, combinedData.layout);
+                    Plotly.newPlot('time-domain-plot', timeDomainData.data, timeDomainData.layout);
+                    Plotly.newPlot('freq-domain-plot', freqDomainData.data, freqDomainData.layout);
+                    Plotly.newPlot('combined-plot', combinedData.data, combinedData.layout);
 
-                        $('#identified-key').text(`Identified DTMF Key: ${response.identified_key.join(', ')}`);
-                    },
-                    error: function (error) {
-                        console.error(error);
-                    }
-                });
+                    $('#identified-key').text(`Identified DTMF Key: ${response.identified_key.join(', ')}`);
+                },
+                error: function (error) {
+                    console.error(error);
+                }
+            });
         }
     </script>
 
